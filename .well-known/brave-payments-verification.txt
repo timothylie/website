@@ -1,0 +1,4 @@
+This is a Brave Payments publisher verification file.
+
+Domain: timothylie.com
+Token: ab3bc31145b0c28b5cd45da2cfa8c78e1bb45b1ab90cc558ad8830cd0044ffc0
