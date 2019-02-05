@@ -1,0 +1,26 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "Personal website of Timothy Lie",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timl206/website.git"
+  },
+  "author": "Timothy Lie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timl206/website/issues"
+  },
+  "homepage": "https://github.com/timl206/website#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.4.9"
+  }
+}
