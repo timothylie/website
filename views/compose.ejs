@@ -1,0 +1,15 @@
+<%- include("partials/header"); -%>
+
+<h1 style"text-align: center"><a href="/" class="linkTitle">Timothy Lie</a></h1>
+
+<div class="container-fluid compose">
+  <h4>Compose</h4>
+  <form class="" action="/compose" method="post">
+    <div class="form-group">
+      <textarea class="form-control" name="postBody" rows="5" cols="50"></textarea>
+    </div>
+    <button class="btn" type="submit" name="button">Publish</button>
+  </form>
+</div>
+
+<%- include("partials/footer"); -%>

@@ -2,7 +2,7 @@
   "name": "website",
   "version": "1.0.0",
   "description": "Personal website of Timothy Lie",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,6 +12,9 @@
   },
   "author": "Timothy Lie",
   "license": "ISC",
+  "engines": {
+    "node": "10.15.0" 
+  },
   "bugs": {
     "url": "https://github.com/timl206/website/issues"
   },
