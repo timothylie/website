@@ -1,11 +1,11 @@
 /* Navbar */
 .linkTitle, .linkTitle:active, .linkTitle:hover {
-  color: #fff;
+  color: #DDD;
   text-decoration: none;
 }
 
 .navbar {
-  background-color: #000;
+  background-color: #111;
   padding-bottom: 1rem;
 }
 
@@ -13,8 +13,8 @@
 body {
   font-family: serif;
   /* font-weight: bold; */
-  background-color: #000;
-  color: #fff;
+  background-color: #111;
+  color: #DDD;
   text-align: center;
   margin-left: 12%;
   margin-right: 12%;
@@ -29,13 +29,13 @@ body {
 }
 
 a, a:hover {
-  color: #fff;
+  color: #DDD;
 }
 
 hr {
   border: none;
   height: 1px;
-  background-color: #fff;
+  background-color: #DDD;
 }
 
 textarea {
