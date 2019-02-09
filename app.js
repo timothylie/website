@@ -1,5 +1,5 @@
 //jshint esversion:6
-
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -9,7 +9,7 @@ const sslRedirect = require("heroku-ssl-redirect");
 
 const app = express();
 
-mongoose.connect('mongodb+srv://admin-timl206:test123@cluster0-ysyuu.mongodb.net/timothylieDB', {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://' + process.env.MONGODB_LOGIN + '@cluster0-ysyuu.mongodb.net/timothylieDB', {useNewUrlParser: true});
 
 app.set('view engine', 'ejs');
 
