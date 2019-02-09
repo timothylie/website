@@ -13,7 +13,7 @@
   "author": "Timothy Lie",
   "license": "ISC",
   "engines": {
-    "node": "10.15.0" 
+    "node": "10.15.0"
   },
   "bugs": {
     "url": "https://github.com/timl206/website/issues"
@@ -23,6 +23,7 @@
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "heroku-ssl-redirect": "0.0.4",
     "lodash": "^4.17.11",
     "mongoose": "^5.4.9"
   }
