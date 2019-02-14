@@ -6,6 +6,7 @@ const ejs = require("ejs");
 const _ = require("lodash");
 const mongoose = require("mongoose");
 const sslRedirect = require("heroku-ssl-redirect");
+const toggle = require(__dirname + "/public/js/tools.js");
 
 const app = express();
 
@@ -16,7 +17,6 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 app.use(sslRedirect());
-
 
 const Schema = mongoose.Schema;
 

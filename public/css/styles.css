@@ -5,7 +5,6 @@
 }
 
 .navbar {
-  background-color: #111;
   padding-bottom: 1rem;
 }
 
@@ -13,8 +12,6 @@
 body {
   font-family: serif;
   /* font-weight: bold; */
-  background-color: #111;
-  color: #DDD;
   text-align: center;
   margin-left: 12%;
   margin-right: 12%;
@@ -29,8 +26,26 @@ body {
   margin-bottom: 50%;
 }
 
-a, a:hover {
+body.dark {
+  background-color: #111;
   color: #DDD;
+}
+body.dark a, body.dark a:visited {
+    color: #DDD;
+}
+body.dark .navbar {
+  background-color: #111;
+}
+
+body.light {
+  background-color: #DDD;
+  color: #111;
+}
+body.light a, body.light a:visited {
+    color: #111;
+}
+body.light .navbar {
+  background-color: #DDD;
 }
 
 hr {
@@ -71,12 +86,3 @@ textarea {
     margin-top: 12%;
   }
 }
-
-/* @viewport{
-  zoom: 1.0;
-  width: extend-to-zoom;
-}
-@-ms-viewport{
-  width: extend-to-zoom;
-  zoom: 1.0;
-} */
