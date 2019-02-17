@@ -26,7 +26,7 @@ const postSchema = new Schema({
 
 const Post = mongoose.model("Post", postSchema);
 
-var modeSetting = "light";
+var modeSetting = "dark";
 
 app.get("/", function(req, res){
 
