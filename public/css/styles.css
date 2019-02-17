@@ -58,8 +58,32 @@ textarea {
   text-align: center;
 }
 
-.btn {
-  background-color: #555;
+.moodButton {
+  margin-top: 1rem;
+  width: 4rem;
+  height: 0.3rem;
+  border-radius: 0rem;
+  border: 0px;
+}
+
+
+
+body.light .moodButton {
+  background-color: #111;
+}
+
+body.dark .moodButton {
+  background-color: #DDD;
+}
+
+body.light .btn {
+  background-color: #111;
+  color: #DDD;
+}
+
+body.dark .btn {
+  background-color: #DDD;
+  color: #111;
 }
 
 .btn:hover {
@@ -74,6 +98,10 @@ textarea {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -80%);
+}
+
+.view {
+  margin-top: 2rem;
 }
 
 .date {

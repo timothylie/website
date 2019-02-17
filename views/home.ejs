@@ -1,8 +1,8 @@
 <%- include("partials/header"); -%>
 
 <div class="container-fluid home">
-
-  <h1 style"text-align: center"><a href="/" class="linkTitle">Timothy Lie</a></h1>
+  <%- include("partials/button"); -%>
+  <h1 name="test" style"text-align: center"><a href="/" class="linkTitle">Timothy Lie</a></h1>
 
   <p> "<%=posts.content%>" </p>
   <p class="date"> <%= posts.date.toDateString() %> </p>

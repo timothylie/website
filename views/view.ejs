@@ -1,11 +1,11 @@
 <%- include("partials/header"); -%>
 
 <div class="container-fluid">
-  <nav class="navbar navbar-fixed-top dark">
+  <nav class="navbar navbar-fixed-top <%=setting%>">
+    <%- include("partials/button"); -%>
     <h1 style"text-align: center"><a href="/" class="linkTitle">Timothy Lie</a></h1>
   </nav>
 </div>
-
 
 <div class="container-fluid view">
   <% posts.forEach(function(post){ %>

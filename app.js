@@ -6,7 +6,6 @@ const ejs = require("ejs");
 const _ = require("lodash");
 const mongoose = require("mongoose");
 const sslRedirect = require("heroku-ssl-redirect");
-const toggle = require(__dirname + "/public/js/tools.js");
 
 const app = express();
 
@@ -27,6 +26,7 @@ const postSchema = new Schema({
 
 const Post = mongoose.model("Post", postSchema);
 
+var modeSetting = "light";
 
 app.get("/", function(req, res){
 
@@ -35,7 +35,8 @@ app.get("/", function(req, res){
       console.log(err);
     } else {
       res.render("home", {
-        posts: posts
+        posts: posts,
+        setting: modeSetting
       });
     }
   });
@@ -45,13 +46,16 @@ app.get("/view", function(req, res){
 
   Post.find({}).sort("-date").exec(function(err, posts){
     res.render("view", {
-      posts: posts
+      posts: posts,
+      setting: modeSetting
       });
   });
 });
 
 app.get("/compose", function(req, res){
-  res.render("compose");
+  res.render("compose", {
+    setting: modeSetting
+  });
 });
 
 app.post("/compose", function(req, res){
@@ -77,6 +81,18 @@ app.get("/posts/:postId", function(req, res){
       });
     }
   });
+});
+
+app.post("/", function(req, res){
+  var currentLocation = req.headers.referer;
+  var currentSetting = req.body.currentMode;
+
+  if (currentSetting === "dark") {
+    modeSetting = "light";
+  } else if (currentSetting === "light") {
+    modeSetting = "dark";
+  }
+  res.redirect(currentLocation);
 });
 
 let port = process.env.PORT;
