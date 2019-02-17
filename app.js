@@ -42,10 +42,10 @@ app.get("/", function(req, res){
   });
 });
 
-app.get("/view", function(req, res){
+app.get("/journal", function(req, res){
 
   Post.find({}).sort("-date").exec(function(err, posts){
-    res.render("view", {
+    res.render("journal", {
       posts: posts,
       setting: modeSetting
       });
