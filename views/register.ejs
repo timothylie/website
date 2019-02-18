@@ -1,0 +1,21 @@
+<%- include('partials/header'); %>
+<%- include("partials/button"); -%>
+
+<h1 style"text-align: center"><a href="/" class="linkTitle">Timothy Lie</a></h1>
+
+<div class="container-fluid">
+  <h4>Register</h4>
+  <!-- Makes POST request to /register route -->
+  <form action="/register" method="POST">
+    <div class="form-group">
+      <input type="email" class="form-control" name="username" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" name="password" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-dark">Register</button>
+  </form>
+
+</div>
+
+<%- include('partials/header') %>

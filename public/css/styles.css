@@ -58,6 +58,10 @@ textarea {
   text-align: center;
 }
 
+input {
+  text-align: center;
+}
+
 .moodButton {
   margin-top: 1rem;
   width: 4rem;
