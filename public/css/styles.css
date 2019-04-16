@@ -1,6 +1,8 @@
 /* Navbar */
-.linkTitle, .linkTitle:active, .linkTitle:hover {
-  color: #DDD;
+.linkTitle,
+.linkTitle:active,
+.linkTitle:hover {
+  color: #ddd;
   text-decoration: none;
 }
 
@@ -26,32 +28,10 @@ body {
   margin-bottom: 50%;
 }
 
-body.dark {
-  background-color: #111;
-  color: #DDD;
-}
-body.dark a, body.dark a:visited {
-    color: #DDD;
-}
-body.dark .navbar {
-  background-color: #111;
-}
-
-body.light {
-  background-color: #DDD;
-  color: #111;
-}
-body.light a, body.light a:visited {
-    color: #111;
-}
-body.light .navbar {
-  background-color: #DDD;
-}
-
 hr {
   border: none;
   height: 1px;
-  background-color: #DDD;
+  background-color: #ddd;
 }
 
 textarea {
@@ -60,34 +40,6 @@ textarea {
 
 input {
   text-align: center;
-}
-
-.moodButton {
-  margin-top: 1rem;
-  width: 4rem;
-  height: 0.3rem;
-  border-radius: 0rem;
-  border: 0px;
-}
-
-
-
-body.light .moodButton {
-  background-color: #111;
-}
-
-body.dark .moodButton {
-  background-color: #DDD;
-}
-
-body.light .btn {
-  background-color: #111;
-  color: #DDD;
-}
-
-body.dark .btn {
-  background-color: #DDD;
-  color: #111;
 }
 
 .btn:hover {
@@ -111,6 +63,63 @@ body.dark .btn {
 .date {
   font-size: 1.2rem;
   color: #888;
+}
+
+.moodButton {
+  margin-top: 1rem;
+  width: 4rem;
+  height: 0.3rem;
+  border-radius: 0rem;
+  border: 0px;
+}
+
+.chart-container {
+  position: relative;
+  height: 100vh;
+  width: 100vh;
+}
+
+/* Dark/Light mode for body */
+body.dark {
+  background-color: #111;
+  color: #ddd;
+}
+body.dark a,
+body.dark a:visited {
+  color: #ddd;
+}
+body.dark .navbar {
+  background-color: #111;
+}
+
+body.dark .moodButton {
+  background-color: #ddd;
+}
+
+body.dark .btn {
+  background-color: #ddd;
+  color: #111;
+}
+
+body.light {
+  background-color: #ddd;
+  color: #111;
+}
+body.light a,
+body.light a:visited {
+  color: #111;
+}
+body.light .navbar {
+  background-color: #ddd;
+}
+
+body.light .moodButton {
+  background-color: #111;
+}
+
+body.light .btn {
+  background-color: #111;
+  color: #ddd;
 }
 
 @media (max-width: 600px) {
