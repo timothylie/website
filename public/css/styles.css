@@ -108,6 +108,7 @@ body.light {
 body.light a,
 body.light a:visited {
   color: #111;
+  font-style: italic;
 }
 body.light .navbar {
   background-color: #ddd;
