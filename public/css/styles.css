@@ -87,6 +87,7 @@ body.dark {
 body.dark a,
 body.dark a:visited {
   color: #ddd;
+  font-style: italic;
 }
 body.dark .navbar {
   background-color: #111;
