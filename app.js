@@ -64,7 +64,8 @@ const Post = mongoose.model("Post", postSchema);
 const networthSchema = new Schema({
   label: String,
   value: Number,
-  valueBTC: Number
+  valueBTC: Number,
+  valueETH: Number
 });
 const Networth = new mongoose.model("Networth", networthSchema);
 
@@ -174,6 +175,19 @@ app.get("/networth-btc", function(req, res) {
   });
 });
 
+app.get("/networth-eth", function(req, res) {
+  Networth.find({}).exec(function(err, x) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("networth-eth", {
+        networth: x,
+        setting: modeSetting
+      });
+    }
+  });
+});
+
 // app.post("/register", function(req, res){
 //   User.register({username: req.body.username}, req.body.password, function(err, user){
 //     if (err) {
@@ -212,7 +226,8 @@ app.post("/compose-networth", function(req, res) {
   const networth = new Networth({
     label: req.body.label,
     value: req.body.value,
-    valueBTC: req.body.valueBTC
+    valueBTC: req.body.valueBTC,
+    valueETH: req.body.valueETH
   });
 
   networth.save(function(err, results) {
