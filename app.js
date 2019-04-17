@@ -63,7 +63,8 @@ const Post = mongoose.model("Post", postSchema);
 // Mongoose Schema for net worth
 const networthSchema = new Schema({
   label: String,
-  value: Number
+  value: Number,
+  valueBTC: Number
 });
 const Networth = new mongoose.model("Networth", networthSchema);
 
@@ -141,12 +142,31 @@ app.get("/journal", function(req, res) {
     });
 });
 
-app.get("/networth", function(req, res) {
+app.get("/financial-journal", function(req, res) {
+  res.render("financial-journal", {
+    setting: modeSetting
+  });
+});
+
+app.get("/networth-usd", function(req, res) {
   Networth.find({}).exec(function(err, x) {
     if (err) {
       console.log(err);
     } else {
-      res.render("networth", {
+      res.render("networth-usd", {
+        networth: x,
+        setting: modeSetting
+      });
+    }
+  });
+});
+
+app.get("/networth-btc", function(req, res) {
+  Networth.find({}).exec(function(err, x) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("networth-btc", {
         networth: x,
         setting: modeSetting
       });
@@ -191,12 +211,13 @@ app.post("/compose", function(req, res) {
 app.post("/compose-networth", function(req, res) {
   const networth = new Networth({
     label: req.body.label,
-    value: req.body.value
+    value: req.body.value,
+    valueBTC: req.body.valueBTC
   });
 
   networth.save(function(err, results) {
     if (!err) {
-      res.redirect("/networth");
+      res.redirect("/networth-usd");
     }
   });
 });

@@ -5,11 +5,14 @@
   <nav class="navbar navbar-fixed-top <%=setting%>">
     <%- include("partials/button"); -%>
     <h1 style"text-align: center"><a href="/" class="linkTitle">Timothy Lie</a></h1>
+    <br />
   </nav>
 </div>
 
 <div class="container-fluid compose chart-container view">
   <canvas id="myChart" width="300" height="200"> </canvas>
+  <br />
+  <a href="/financial-journal"> Go back </a>
 </div>
 
   <script>
@@ -27,7 +30,7 @@
           <% }) %>
         ],
         datasets: [{
-          label: "Net Worth",
+          label: "US Dollar",
           data: [
             <%networth.forEach(function(date){ %>
               "<%= date.value %>" ,
@@ -40,7 +43,7 @@
       options: {
         title: {
           display: true,
-          text: "Net Worth",
+          text: "Net Worth in US Dollar",
           fontSize: 25
         },
         legend: {

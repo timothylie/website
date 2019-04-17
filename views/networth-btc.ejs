@@ -1,0 +1,59 @@
+<%- include("partials/header"); -%>
+<%- include("partials/script"); -%>
+
+<div class="container-fluid">
+  <nav class="navbar navbar-fixed-top <%=setting%>">
+    <%- include("partials/button"); -%>
+    <h1 style"text-align: center"><a href="/" class="linkTitle">Timothy Lie</a></h1>
+  </nav>
+</div>
+
+<div class="container-fluid compose chart-container view">
+  <canvas id="myChart" width="300" height="200"> </canvas>
+  <br />
+  <a href="/financial-journal"> Go back </a>
+</div>
+
+  <script>
+    let myChart = document.getElementById("myChart").getContext("2d");
+
+    //Global options
+    Chart.defaults.global.defaultFontFamily = "serif";
+
+    let myNetworth = new Chart(myChart, {
+      type: "line",
+      data: {
+        labels:[
+          <%networth.forEach(function(date){ %>
+            "<%= date.label %>" ,
+          <% }) %>
+        ],
+        datasets: [{
+          label: "Satoshi",
+          data: [
+            <%networth.forEach(function(date){ %>
+              "<%= date.valueBTC %>" ,
+            <% }) %>
+          ],
+          backgroundColor: "#ddd",
+          pointRadius: 2
+        }]
+      },
+      options: {
+        title: {
+          display: true,
+          text: "Net Worth in Satoshi",
+          fontSize: 25
+        },
+        legend: {
+          display: false
+        },
+        layout: {
+          width: 1,
+          heigth: 1
+        }
+      }
+    });
+  </script>
+
+<%- include("partials/footer"); -%>
