@@ -47,6 +47,10 @@ input {
   color: #222;
 }
 
+.link-style {
+  font-style: italic;
+}
+
 .center {
   margin: 0;
   position: absolute;
@@ -87,7 +91,6 @@ body.dark {
 body.dark a,
 body.dark a:visited {
   color: #ddd;
-  font-style: italic;
 }
 body.dark .navbar {
   background-color: #111;
@@ -109,7 +112,6 @@ body.light {
 body.light a,
 body.light a:visited {
   color: #111;
-  font-style: italic;
 }
 body.light .navbar {
   background-color: #ddd;
