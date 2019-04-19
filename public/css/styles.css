@@ -19,13 +19,17 @@ body {
   margin-right: 12%;
 }
 
+button {
+  background-image: none;
+}
+
 .home {
   margin-top: 20%;
 }
 
 .view {
-  padding-top: 10rem;
-  margin-bottom: 50%;
+  padding-top: 15rem;
+  margin-bottom: 10%;
 }
 
 hr {
@@ -71,8 +75,8 @@ input {
 
 .moodButton {
   margin-top: 1rem;
-  width: 4rem;
-  height: 0.3rem;
+  width: 10rem;
+  height: 2rem;
   border-radius: 0rem;
   border: 0px;
 }
@@ -81,6 +85,16 @@ input {
   position: relative;
   height: 100vh;
   width: 100vh;
+}
+
+.link-icons {
+  font-size: 15px;
+}
+
+/* IMAGES */
+.img-thumbnail {
+  display: inline-block;
+  width: 20%;
 }
 
 /* Dark/Light mode for body */
@@ -105,6 +119,11 @@ body.dark .btn {
   color: #111;
 }
 
+body.dark .link-style,
+body.dark .link-style:visited {
+  color: #888;
+}
+
 body.light {
   background-color: #ddd;
   color: #111;
@@ -126,8 +145,21 @@ body.light .btn {
   color: #ddd;
 }
 
+body.light .link-style,
+body.light .link-style:visited {
+  color: #555;
+}
+
 @media (max-width: 600px) {
   .home {
     margin-top: 12%;
+  }
+
+  .img-thumbnail {
+    width: 60%;
+  }
+
+  .link-icons {
+    font-size: 1.5rem;
   }
 }

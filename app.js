@@ -17,6 +17,8 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(sslRedirect());
 
+//PASSPORT setup
+
 app.use(
   session({
     secret: process.env.SECRET,
@@ -27,6 +29,8 @@ app.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+// MONGODB Database setup
 
 mongoose.connect(
   "mongodb+srv://" +
@@ -65,12 +69,16 @@ const networthSchema = new Schema({
   label: String,
   value: Number,
   valueBTC: Number,
-  valueETH: Number
+  valueETH: Number,
+  event: String
 });
 const Networth = new mongoose.model("Networth", networthSchema);
 
-// Dark/Light mode variable
+// DARK/LIGHT MODE variable
+
 var modeSetting = "dark";
+
+// HOME
 
 app.get("/", function(req, res) {
   Post.findOne()
@@ -87,17 +95,55 @@ app.get("/", function(req, res) {
     });
 });
 
+app.post("/", function(req, res) {
+  var currentLocation = req.headers.referer;
+  var currentSetting = req.body.currentMode;
+
+  if (currentSetting === "dark") {
+    modeSetting = "light";
+  } else if (currentSetting === "light") {
+    modeSetting = "dark";
+  }
+  res.redirect(currentLocation);
+});
+
+// LOGIN & REGISTER ACCOUNTS
+
 app.get("/login", function(req, res) {
   res.render("login", {
     setting: modeSetting
   });
 });
 
+app.post(
+  "/login",
+  passport.authenticate("local", {
+    successRedirect: "/compose",
+    failureRedirect: "/login",
+    failureFlash: false
+  })
+);
+
 // app.get("/register", function(req, res){
 //   res.render("register", {
 //     setting: modeSetting
 //   });
 // });
+
+// app.post("/register", function(req, res){
+//   User.register({username: req.body.username}, req.body.password, function(err, user){
+//     if (err) {
+//       console.log(err);
+//       res.redirect("/register");
+//     } else {
+//       passport.authenticate("local")(req, res, function(){
+//         res.redirect("/compose");
+//       })
+//     }
+//   })
+// });
+
+// COMPOSE
 
 app.get("/compose", function(req, res) {
   if (req.isAuthenticated()) {
@@ -109,6 +155,18 @@ app.get("/compose", function(req, res) {
   }
 });
 
+app.post("/compose", function(req, res) {
+  const post = new Post({
+    content: req.body.postBody
+  });
+
+  post.save(function(err, results) {
+    if (!err) {
+      res.redirect("/");
+    }
+  });
+});
+
 app.get("/compose-networth", function(req, res) {
   if (req.isAuthenticated()) {
     res.render("compose-networth", {
@@ -117,6 +175,34 @@ app.get("/compose-networth", function(req, res) {
   } else {
     res.redirect("/login");
   }
+});
+
+app.post("/compose-networth", function(req, res) {
+  const networth = new Networth({
+    label: req.body.label,
+    value: req.body.value,
+    valueBTC: req.body.valueBTC,
+    valueETH: req.body.valueETH
+  });
+
+  networth.save(function(err, results) {
+    if (!err) {
+      res.redirect("/networth-usd");
+    }
+  });
+});
+
+// JOURNAL
+
+app.get("/journal", function(req, res) {
+  Post.find({})
+    .sort("-date")
+    .exec(function(err, posts) {
+      res.render("journal", {
+        posts: posts,
+        setting: modeSetting
+      });
+    });
 });
 
 app.get("/posts/:postId", function(req, res) {
@@ -132,16 +218,7 @@ app.get("/posts/:postId", function(req, res) {
   });
 });
 
-app.get("/journal", function(req, res) {
-  Post.find({})
-    .sort("-date")
-    .exec(function(err, posts) {
-      res.render("journal", {
-        posts: posts,
-        setting: modeSetting
-      });
-    });
-});
+//FINANCIAL JOURNAL
 
 app.get("/financial-journal", function(req, res) {
   res.render("financial-journal", {
@@ -169,7 +246,8 @@ app.get("/networth-btc", function(req, res) {
     } else {
       res.render("networth-btc", {
         networth: x,
-        setting: modeSetting
+        setting: modeSetting,
+        event: x
       });
     }
   });
@@ -188,66 +266,15 @@ app.get("/networth-eth", function(req, res) {
   });
 });
 
-// app.post("/register", function(req, res){
-//   User.register({username: req.body.username}, req.body.password, function(err, user){
-//     if (err) {
-//       console.log(err);
-//       res.redirect("/register");
-//     } else {
-//       passport.authenticate("local")(req, res, function(){
-//         res.redirect("/compose");
-//       })
-//     }
-//   })
-// });
+// MUSIC
 
-app.post(
-  "/login",
-  passport.authenticate("local", {
-    successRedirect: "/compose",
-    failureRedirect: "/login",
-    failureFlash: false
-  })
-);
-
-app.post("/compose", function(req, res) {
-  const post = new Post({
-    content: req.body.postBody
-  });
-
-  post.save(function(err, results) {
-    if (!err) {
-      res.redirect("/");
-    }
+app.get("/music", function(req, res) {
+  res.render("music", {
+    setting: modeSetting
   });
 });
 
-app.post("/compose-networth", function(req, res) {
-  const networth = new Networth({
-    label: req.body.label,
-    value: req.body.value,
-    valueBTC: req.body.valueBTC,
-    valueETH: req.body.valueETH
-  });
-
-  networth.save(function(err, results) {
-    if (!err) {
-      res.redirect("/networth-usd");
-    }
-  });
-});
-
-app.post("/", function(req, res) {
-  var currentLocation = req.headers.referer;
-  var currentSetting = req.body.currentMode;
-
-  if (currentSetting === "dark") {
-    modeSetting = "light";
-  } else if (currentSetting === "light") {
-    modeSetting = "dark";
-  }
-  res.redirect(currentLocation);
-});
+// PORT
 
 let port = process.env.PORT;
 if (port == null || port == "") {
