@@ -4,29 +4,63 @@
 <h1 style"text-align: center"><a href="/" class="linkTitle">Timothy Lie</a></h1>
 
 <div class="container-fluid compose">
-  <h4>Portfolio</h4>
   <form class="" action="/compose-portfolio" method="post">
+    <h4>Portfolio in US Dollar</h4>
     <div class="form-group">
-      <textarea class="form-control" name="fiat" placeholder="Fiat" rows="1" cols="5"></textarea>
+      <textarea class="form-control" name="fiatUSD" placeholder="Fiat" rows="1" cols="5"></textarea>
     </div>
     <div class="form-group">
-      <textarea class="form-control" name="crypto" placeholder="Crypto" rows="1" cols="5"></textarea>
+      <textarea class="form-control" name="cryptoUSD" placeholder="Crypto" rows="1" cols="5"></textarea>
     </div>
     <div class="form-group">
-      <textarea class="form-control" name="other" placeholder="Other (Credits, Stocks/Bonds, Intangibles, Short-term loans)" rows="1" cols="5"></textarea>
+      <textarea class="form-control" name="otherUSD" placeholder="Other (Credits, Stocks/Bonds, Intangibles, Short-term loans)" rows="1" cols="5"></textarea>
     </div>
     <div class="form-group">
-      <textarea class="form-control" name="longterm" placeholder="Long-term assets" rows="1" cols="5"></textarea>
+      <textarea class="form-control" name="longtermUSD" placeholder="Long-term assets" rows="1" cols="5"></textarea>
     </div>
     <div class="form-group">
-      <textarea class="form-control" name="commodities" placeholder="Commodities" rows="1" cols="5"></textarea>
+      <textarea class="form-control" name="commoditiesUSD" placeholder="Commodities" rows="1" cols="5"></textarea>
+    </div>
+    <br/>
+    <h4>Portfolio in Satoshi</h4>
+    <div class="form-group">
+      <textarea class="form-control" name="fiatBTC" placeholder="Fiat" rows="1" cols="5"></textarea>
+    </div>
+    <div class="form-group">
+      <textarea class="form-control" name="cryptoBTC" placeholder="Crypto" rows="1" cols="5"></textarea>
+    </div>
+    <div class="form-group">
+      <textarea class="form-control" name="otherBTC" placeholder="Other (Credits, Stocks/Bonds, Intangibles, Short-term loans)" rows="1" cols="5"></textarea>
+    </div>
+    <div class="form-group">
+      <textarea class="form-control" name="longtermBTC" placeholder="Long-term assets" rows="1" cols="5"></textarea>
+    </div>
+    <div class="form-group">
+      <textarea class="form-control" name="commoditiesBTC" placeholder="Commodities" rows="1" cols="5"></textarea>
+    </div>
+    <br/>
+    <h4>Portfolio in Ethereum</h4>
+    <div class="form-group">
+      <textarea class="form-control" name="fiatETH" placeholder="Fiat" rows="1" cols="5"></textarea>
+    </div>
+    <div class="form-group">
+      <textarea class="form-control" name="cryptoETH" placeholder="Crypto" rows="1" cols="5"></textarea>
+    </div>
+    <div class="form-group">
+      <textarea class="form-control" name="otherETH" placeholder="Other (Credits, Stocks/Bonds, Intangibles, Short-term loans)" rows="1" cols="5"></textarea>
+    </div>
+    <div class="form-group">
+      <textarea class="form-control" name="longtermETH" placeholder="Long-term assets" rows="1" cols="5"></textarea>
+    </div>
+    <div class="form-group">
+      <textarea class="form-control" name="commoditiesETH" placeholder="Commodities" rows="1" cols="5"></textarea>
     </div>
   </div>
     <button class="btn" type="submit" name="button">Update</button>
   </form>
 
   <br /> <br />
-  <a class="link-style" href="/compose"> ↞ Go back ↞ </a>
+  <a class="link-style" style="padding-bottom: 10rem" href="/compose"> ↞ Go back ↞ </a>
 </div>
 
 <%- include("partials/footer"); -%>

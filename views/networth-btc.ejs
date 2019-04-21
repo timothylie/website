@@ -63,7 +63,7 @@
     type: 'doughnut',
     data: {
       datasets: [{
-        data: [<%=portfolio[0].fiat%>, <%=portfolio[0].crypto%>, <%=portfolio[0].other%>, <%=portfolio[0].longterm%>, <%=portfolio[0].commodities%>],
+        data: [<%=portfolio[0].fiatBTC%>, <%=portfolio[0].cryptoBTC%>, <%=portfolio[0].otherBTC%>, <%=portfolio[0].longtermBTC%>, <%=portfolio[0].commoditiesBTC%>],
         backgroundColor: ["#eee", "#333", "#ccc", "#555", "#aaa", "#777", "#999"],
         label: "Portfolio",
         borderWidth: 0
@@ -74,7 +74,7 @@
       responsive: true,
       title: {
         display: true,
-        text: "Portfolio",
+        text: "Portfolio in Satoshi",
         fontSize: 25
       }
     }

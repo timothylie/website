@@ -76,11 +76,21 @@ const Networth = new mongoose.model("Networth", networthSchema);
 
 // Mongoose Schema for Portfolio
 const portfolioSchema = new Schema({
-  fiat: Number,
-  crypto: Number,
-  other: Number,
-  longterm: Number,
-  commodities: Number
+  fiatUSD: Number,
+  cryptoUSD: Number,
+  otherUSD: Number,
+  longtermUSD: Number,
+  commoditiesUSD: Number,
+  fiatBTC: Number,
+  cryptoBTC: Number,
+  otherBTC: Number,
+  longtermBTC: Number,
+  commoditiesBTC: Number,
+  fiatETH: Number,
+  cryptoETH: Number,
+  otherETH: Number,
+  longtermETH: Number,
+  commoditiesETH: Number
 });
 const Portfolio = new mongoose.model("Portfolio", portfolioSchema);
 
@@ -216,11 +226,21 @@ app.post("/compose-portfolio", function(req, res) {
   Portfolio.updateOne(
     { _id: "5cbc09e82daf8531fe366293" },
     {
-      fiat: req.body.fiat,
-      crypto: req.body.crypto,
-      other: req.body.other,
-      longterm: req.body.longterm,
-      commodities: req.body.commodities
+      fiatUSD: req.body.fiatUSD,
+      cryptoUSD: req.body.cryptoUSD,
+      otherUSD: req.body.otherUSD,
+      longtermUSD: req.body.longtermUSD,
+      commoditiesUSD: req.body.commoditiesUSD,
+      fiatBTC: req.body.fiatBTC,
+      cryptoBTC: req.body.cryptoBTC,
+      otherBTC: req.body.otherBTC,
+      longtermBTC: req.body.longtermBTC,
+      commoditiesBTC: req.body.commoditiesBTC,
+      fiatETH: req.body.fiatETH,
+      cryptoETH: req.body.cryptoETH,
+      otherETH: req.body.otherETH,
+      longtermETH: req.body.longtermETH,
+      commoditiesETH: req.body.commoditiesETH
     },
     function(err, results) {
       if (!err) {

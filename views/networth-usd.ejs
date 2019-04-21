@@ -63,7 +63,7 @@
     type: 'doughnut',
     data: {
       datasets: [{
-        data: [<%=portfolio[0].fiat%>, <%=portfolio[0].crypto%>, <%=portfolio[0].other%>, <%=portfolio[0].longterm%>, <%=portfolio[0].commodities%>],
+        data: [<%=portfolio[0].fiatUSD%>, <%=portfolio[0].cryptoUSD%>, <%=portfolio[0].otherUSD%>, <%=portfolio[0].longtermUSD%>, <%=portfolio[0].commoditiesUSD%>],
         backgroundColor: ["#eee", "#333", "#ccc", "#555", "#aaa", "#777", "#999"],
         label: "Portfolio",
         borderWidth: 0
@@ -74,7 +74,7 @@
       responsive: true,
       title: {
         display: true,
-        text: "Portfolio",
+        text: "Portfolio in US Dollar",
         fontSize: 25
       }
     }
