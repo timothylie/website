@@ -12,48 +12,73 @@
 
 <div class="container-fluid compose chart-container view">
   <canvas id="myChart" width="300" height="200"> </canvas>
+  <div class="container-fluid chart-container portfolio">
+    <canvas id="myPieChart" width="200" height="100" </canvas>
+  </div>
 </div>
 
-  <script>
-    let myChart = document.getElementById("myChart").getContext("2d");
+<script>
+  let myChart = document.getElementById("myChart").getContext("2d");
+  let myPieChart = document.getElementById("myPieChart").getContext("2d");
 
-    //Global options
-    Chart.defaults.global.defaultFontFamily = "serif";
+  //Global options
+  Chart.defaults.global.defaultFontFamily = "serif";
 
-    let myNetworth = new Chart(myChart, {
-      type: "line",
-      data: {
-        labels:[
+  let myNetworth = new Chart(myChart, {
+    type: "line",
+    data: {
+      labels:[
+        <%networth.forEach(function(date){ %>
+          "<%= date.label %>" ,
+        <% }) %>
+      ],
+      datasets: [{
+        label: "Satoshi",
+        data: [
           <%networth.forEach(function(date){ %>
-            "<%= date.label %>" ,
-          <% }) %>
+            "<%= date.valueBTC %>" ,
+          <% }) %>,
         ],
-        datasets: [{
-          label: "Satoshi",
-          data: [
-            <%networth.forEach(function(date){ %>
-              "<%= date.valueBTC %>" ,
-            <% }) %>,
-          ],
-          backgroundColor: "#ddd",
-          pointRadius: 2
-        }]
+        backgroundColor: "#ddd",
+        pointRadius: 2
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: "Net Worth in Satoshi",
+        fontSize: 25
       },
-      options: {
-        title: {
-          display: true,
-          text: "Net Worth in Satoshi",
-          fontSize: 25
-        },
-        legend: {
-          display: false
-        },
-        layout: {
-          width: 1,
-          heigth: 1
-        }
+      legend: {
+        display: false
+      },
+      layout: {
+        width: 1,
+        heigth: 1
       }
-    });
-  </script>
+    }
+  });
+
+  let myPortfolio = new Chart(myPieChart, {
+    type: 'doughnut',
+    data: {
+      datasets: [{
+        data: [<%=portfolio[0].fiat%>, <%=portfolio[0].crypto%>, <%=portfolio[0].other%>, <%=portfolio[0].longterm%>, <%=portfolio[0].commodities%>],
+        backgroundColor: ["#fff", "#eee", "#ccc", "#bbb", "#aaa", "#999", "#888", "#777"],
+        label: "Portfolio",
+        borderWidth: 0
+      }],
+      labels: ["Fiat", "Crypto", "Other", "Long-term assets", "Commodities"]
+    },
+    options: {
+      responsive: true,
+      title: {
+        display: true,
+        text: "Portfolio",
+        fontSize: 25
+      }
+    }
+  });
+</script>
 
 <%- include("partials/footer"); -%>

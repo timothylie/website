@@ -74,6 +74,16 @@ const networthSchema = new Schema({
 });
 const Networth = new mongoose.model("Networth", networthSchema);
 
+// Mongoose Schema for Portfolio
+const portfolioSchema = new Schema({
+  fiat: Number,
+  crypto: Number,
+  other: Number,
+  longterm: Number,
+  commodities: Number
+});
+const Portfolio = new mongoose.model("Portfolio", portfolioSchema);
+
 // DARK/LIGHT MODE variable
 
 var modeSetting = "dark";
@@ -187,9 +197,37 @@ app.post("/compose-networth", function(req, res) {
 
   networth.save(function(err, results) {
     if (!err) {
-      res.redirect("/networth-usd");
+      res.redirect("/financial-journal");
     }
   });
+});
+
+app.get("/compose-portfolio", function(req, res) {
+  if (req.isAuthenticated()) {
+    res.render("compose-portfolio", {
+      setting: modeSetting
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+
+app.post("/compose-portfolio", function(req, res) {
+  Portfolio.updateOne(
+    { _id: "5cbc09e82daf8531fe366293" },
+    {
+      fiat: req.body.fiat,
+      crypto: req.body.crypto,
+      other: req.body.other,
+      longterm: req.body.longterm,
+      commodities: req.body.commodities
+    },
+    function(err, results) {
+      if (!err) {
+        res.redirect("/financial-journal");
+      }
+    }
+  );
 });
 
 // JOURNAL
@@ -231,9 +269,17 @@ app.get("/networth-usd", function(req, res) {
     if (err) {
       console.log(err);
     } else {
-      res.render("networth-usd", {
-        networth: x,
-        setting: modeSetting
+      Portfolio.find({}).exec(function(err, y) {
+        if (err) {
+          console.log(err);
+        } else {
+          res.render("networth-usd", {
+            networth: x,
+            setting: modeSetting,
+            event: x,
+            portfolio: y
+          });
+        }
       });
     }
   });
@@ -244,10 +290,17 @@ app.get("/networth-btc", function(req, res) {
     if (err) {
       console.log(err);
     } else {
-      res.render("networth-btc", {
-        networth: x,
-        setting: modeSetting,
-        event: x
+      Portfolio.find({}).exec(function(err, y) {
+        if (err) {
+          console.log(err);
+        } else {
+          res.render("networth-btc", {
+            networth: x,
+            setting: modeSetting,
+            event: x,
+            portfolio: y
+          });
+        }
       });
     }
   });
@@ -258,9 +311,17 @@ app.get("/networth-eth", function(req, res) {
     if (err) {
       console.log(err);
     } else {
-      res.render("networth-eth", {
-        networth: x,
-        setting: modeSetting
+      Portfolio.find({}).exec(function(err, y) {
+        if (err) {
+          console.log(err);
+        } else {
+          res.render("networth-eth", {
+            networth: x,
+            setting: modeSetting,
+            event: x,
+            portfolio: y
+          });
+        }
       });
     }
   });
