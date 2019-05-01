@@ -1,8 +1,15 @@
 /* Navbar */
-.linkTitle,
-.linkTitle:active,
-.linkTitle:hover {
+body.dark .linkTitle,
+body.dark .linkTitle:active,
+body.dark .linkTitle:hover {
   color: #ddd;
+  text-decoration: none;
+}
+
+body.light .linkTitle,
+body.light .linkTitle:active,
+body.light .linkTitle:hover {
+  color: #111;
   text-decoration: none;
 }
 
