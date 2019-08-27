@@ -35,14 +35,15 @@ button {
 }
 
 .view {
-  padding-top: 15rem;
+  padding-top: 16rem;
   margin-bottom: 10%;
 }
 
 hr {
   border: none;
-  height: 1px;
-  background-color: #ddd;
+  height: 0.3px;
+  width: 100px;
+  background-color: #787878;
 }
 
 textarea {
@@ -53,9 +54,18 @@ input {
   text-align: center;
 }
 
+.text {
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
 .btn:hover {
   background-color: #bbb;
   color: #222;
+}
+
+.title-style {
+  color: #787878;
 }
 
 .link-style {
@@ -72,7 +82,7 @@ input {
 }
 
 .view {
-  margin-top: 2rem;
+  margin-top: 5rem;
 }
 
 .portfolio {
@@ -92,12 +102,6 @@ input {
   border: 0px;
 }
 
-.chart-container {
-  position: relative;
-  height: 100vh;
-  width: 100vh;
-}
-
 .link-icons {
   font-size: 15px;
 }
@@ -111,6 +115,18 @@ input {
 .img-preview {
   display: inline-block;
   width: 50%;
+}
+
+.img-full {
+  display: inline-block;
+  width: 50%;
+}
+
+/* CHART */
+.chart-container {
+  position: relative;
+  height: 100vh;
+  width: 100vh;
 }
 
 /* Dark/Light mode for body */
@@ -166,24 +182,48 @@ body.light .link-style:visited {
   color: #555;
 }
 
-/* iPhone formats */
-@media (max-width: 600px) {
+/* iPhone and iPad formats */
+@media (max-width: 770px) {
+  .text {
+    margin-left: 8%;
+    margin-right: 8%;
+  }
   .home {
     margin-top: 12%;
   }
 
-  .img-playlist {
-    width: 60%;
+  .img-preview {
+    width: 100%;
   }
 
   .link-icons {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+  }
+
+  .view {
+    padding-top: 16rem;
+    margin-bottom: 10%;
+  }
+
+  .img-playlist {
+    width: 40%;
+  }
+
+  .img-full {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .chart-container {
+    position: relative;
+    height: 63vh;
+    width: 63vh;
   }
 }
 
-/* iPhone and iPad formats */
-@media (max-width: 770px) {
-  .img-preview {
-    width: 100%;
+/* iPhone formats only */
+@media (max-width: 600px) {
+  .img-playlist {
+    width: 80%;
   }
 }

@@ -1,18 +1,20 @@
 <%- include("partials/header"); -%>
 
 <div class="container-fluid">
-  <nav class="navbar navbar-fixed-top <%=setting%>">
-    <%- include("partials/button"); -%>
-    <h1 style"text-align: center"><a href="/" class="linkTitle">Timothy Lie</a></h1>
-    <a class="link-style" href="/"> ↞ Go back ↞ </a>
-    <br />
-  </nav>
+  <%- include("partials/navigation"); -%>
 </div>
 
 <div class="container-fluid view">
+  <h2 class="title-style"> 📜 </h2>
+  <h3 class="title-style"> Journal </h3>
+  <p class="link-style text">
+    A collection of my thoughts.
+  </p>
+  <br /><br/>
+
   <% posts.forEach(function(post){ %>
 
-        <p> "<%=post.content%>" </p>
+        <p class="text"> "<%=post.content%>" </p>
         <p class="date"> <%=post.date.toDateString()%> </p>
         <br />
 

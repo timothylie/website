@@ -2,15 +2,17 @@
 <%- include("partials/script"); -%>
 
 <div class="container-fluid">
-  <nav class="navbar navbar-fixed-top <%=setting%>">
-    <%- include("partials/button"); -%>
-    <h1 style"text-align: center"><a href="/" class="linkTitle">Timothy Lie</a></h1>
-    <br />
-    <a class="link-style" href="/financial-journal"> ↞ Go back ↞ </a>
-  </nav>
+  <%- include("partials/navigation"); -%>
 </div>
 
 <div class="container-fluid compose chart-container view">
+  <h2 class="title-style"> 📈 </h2>
+  <h3 class="title-style"> Financial Performance in US Dollar </h3>
+  <p class="link-style text">
+    US Dollar is currently the world reserve fiat currency. Please note that this page is not quite optimal designed for mobile yet.
+  </p>
+  <br /><br/>
+
   <canvas id="myChart" width="300" height="200"> </canvas>
   <div class="container-fluid chart-container portfolio">
     <canvas id="myPieChart" width="200" height="100" </canvas>

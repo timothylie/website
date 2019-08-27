@@ -355,6 +355,14 @@ app.get("/music", function(req, res) {
   });
 });
 
+// PHOTOS
+
+app.get("/photos", function(req, res) {
+  res.render("photos", {
+    setting: modeSetting
+  });
+});
+
 // PORT
 
 let port = process.env.PORT;
