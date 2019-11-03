@@ -17,6 +17,12 @@ body.light .linkTitle:hover {
   padding-bottom: 1rem;
 }
 
+/* TRADEMARK: This layout is created by Skriven. */
+.trademark {
+  font-size: 1.2rem;
+  color: #888;
+}
+
 /* Body */
 body {
   font-family: serif;
@@ -65,12 +71,21 @@ input {
 }
 
 .title-style {
-  color: #787878;
+  color: #888;
 }
+
+/* LINK */
 
 .link-style {
   font-style: italic;
 }
+
+.link-icon {
+  width: 20px;
+  margin-left: 5px;
+}
+
+/* END OF LINK */
 
 .center {
   margin: 0;
@@ -102,10 +117,6 @@ input {
   border: 0px;
 }
 
-.link-icons {
-  font-size: 15px;
-}
-
 /* IMAGES */
 .img-playlist {
   display: inline-block;
@@ -120,6 +131,11 @@ input {
 .img-full {
   display: inline-block;
   width: 50%;
+}
+
+/* CONTENT STYLES */
+.content-icon {
+  width: 50px;
 }
 
 /* CHART */
@@ -196,9 +212,13 @@ body.light .link-style:visited {
     width: 100%;
   }
 
-  .link-icons {
-    font-size: 2.5rem;
+  /* LINK */
+  .link-icon {
+    width: 27px;
+    margin-left: 5px;
   }
+
+  /* END OF LINK */
 
   .view {
     padding-top: 16rem;
