@@ -8,8 +8,7 @@ body.dark .linkTitle:hover {
 
 body.light .linkTitle,
 body.light .linkTitle:active,
-body.light .linkTitle:hover,
-body.light .form-design {
+body.light .linkTitle:hover {
   color: #111;
   text-decoration: none;
 }
@@ -79,11 +78,13 @@ input {
 
 .link-style {
   font-style: italic;
+  text-decoration: none;
 }
 
 .link-icon {
   width: 20px;
   margin-left: 5px;
+  text-decoration: none;
 }
 
 /* END OF LINK */
