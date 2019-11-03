@@ -366,6 +366,14 @@ app.get("/photos", function(req, res) {
   });
 });
 
+// ARTWORKS
+
+app.get("/artworks", function(req, res) {
+  res.render("artworks", {
+    setting: modeSetting
+  });
+});
+
 // PORT
 
 let port = process.env.PORT;

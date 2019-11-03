@@ -8,7 +8,8 @@ body.dark .linkTitle:hover {
 
 body.light .linkTitle,
 body.light .linkTitle:active,
-body.light .linkTitle:hover {
+body.light .linkTitle:hover,
+body.light .form-design {
   color: #111;
   text-decoration: none;
 }

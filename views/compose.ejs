@@ -1,10 +1,19 @@
-<%- include("partials/header"); -%>
-<%- include("partials/button"); -%>
 
-<h1 style"text-align: center"><a href="/" class="linkTitle">Timothy Lie</a></h1>
+<%- include("partials/header"); -%>
+
+<div class="container-fluid">
+  <%- include("partials/navigation"); -%>
+</div>
+
+<div class="container-fluid view">
+  <img src="/img/icons/compose-original.png" alt="..." class="content-icon">
+  <h3 class="title-style"> Compose </h3>
+  <p class="link-style text">
+    What are your thoughts?
+  </p>
+  <br />
 
 <div class="container-fluid compose">
-  <h4>Compose</h4>
   <form class="" action="/compose" method="post">
     <div class="form-group">
       <textarea class="form-control" name="postBody" rows="5" cols="50"></textarea>
