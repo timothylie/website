@@ -1,0 +1,98 @@
+<%- include("partials/header"); -%>
+<%- include("partials/script"); -%>
+
+<div class="container-fluid">
+  <%- include("partials/navigation"); -%>
+</div>
+
+<div class="container-fluid compose chart-container view">
+  <img src="/img/icons/financial-performance-original.png" alt="..." class="content-icon">
+  <h3 class="title-style"> Financial Performance in Satoshi </h3>
+  <p class="link-style text">
+    A Satoshi is the smallest unit of a Bitcoin. Please note that this page is not quite optimal designed for mobile yet.
+  </p>
+  <br /><br/>
+
+  <canvas id="myChart" width="300" height="200"> </canvas>
+  <div class="container-fluid chart-container portfolio">
+    <canvas id="myPieChart" width="200" height="100" </canvas>
+  </div>
+</div>
+
+<script>
+  let myChart = document.getElementById("myChart").getContext("2d");
+  let myPieChart = document.getElementById("myPieChart").getContext("2d");
+
+  //Global options
+  Chart.defaults.global.defaultFontFamily = "serif";
+
+  let myNetworth = new Chart(myChart, {
+    type: "line",
+    data: {
+      labels:[
+        <%networth.forEach(function(date){ %>
+          "<%= date.label %>" ,
+        <% }) %>
+      ],
+      datasets: [{
+        label: "Satoshi",
+        data: [
+          <%networth.forEach(function(date){ %>
+            "<%= date.valueBTC %>" ,
+          <% }) %>,
+        ],
+        backgroundColor: "#ddd",
+        pointRadius: 2
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: "Net Worth in Satoshi",
+        fontSize: 25
+      },
+      legend: {
+        display: false
+      },
+      layout: {
+        width: 1,
+        heigth: 1
+      },
+      scales: {
+          xAxes: [{
+              gridLines: {
+                  color: "rgba(0, 0, 0, 0)",
+              }
+          }],
+          yAxes: [{
+              gridLines: {
+                  color: "rgba(0, 0, 0, 0)",
+              }
+          }]
+      }
+    }
+  });
+
+  let myPortfolio = new Chart(myPieChart, {
+    type: 'doughnut',
+    data: {
+      datasets: [{
+        data: [<%=portfolio[0].fiatBTC%>, <%=portfolio[0].cryptoBTC%>, <%=portfolio[0].otherBTC%>, <%=portfolio[0].longtermBTC%>, <%=portfolio[0].commoditiesBTC%>],
+        backgroundColor: ["#eee", "#333", "#ccc", "#555", "#aaa", "#777", "#999"],
+        label: "Portfolio",
+        borderWidth: 0
+      }],
+      labels: ["Fiat", "Crypto", "Other", "Long-term assets", "Commodities"]
+    },
+    options: {
+      responsive: true,
+      title: {
+        display: true,
+        text: "Portfolio in Satoshi",
+        fontSize: 25
+      }
+    }
+  });
+</script>
+
+<%- include("partials/footer"); -%>

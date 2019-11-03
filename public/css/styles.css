@@ -248,4 +248,8 @@ body.light .link-style:visited {
   .img-playlist {
     width: 80%;
   }
+
+  .mobile-disable-view {
+    display: none;
+  }
 }

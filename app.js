@@ -57,6 +57,7 @@ passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+// JOURNAL SCHEMA
 // Mongoose Schema for posts
 const postSchema = new Schema({
   content: String,
@@ -64,35 +65,36 @@ const postSchema = new Schema({
 });
 const Post = mongoose.model("Post", postSchema);
 
-// Mongoose Schema for net worth
-const networthSchema = new Schema({
-  label: String,
-  value: Number,
-  valueBTC: Number,
-  valueETH: Number,
-  event: String
-});
-const Networth = new mongoose.model("Networth", networthSchema);
-
-// Mongoose Schema for Portfolio
-const portfolioSchema = new Schema({
-  fiatUSD: Number,
-  cryptoUSD: Number,
-  otherUSD: Number,
-  longtermUSD: Number,
-  commoditiesUSD: Number,
-  fiatBTC: Number,
-  cryptoBTC: Number,
-  otherBTC: Number,
-  longtermBTC: Number,
-  commoditiesBTC: Number,
-  fiatETH: Number,
-  cryptoETH: Number,
-  otherETH: Number,
-  longtermETH: Number,
-  commoditiesETH: Number
-});
-const Portfolio = new mongoose.model("Portfolio", portfolioSchema);
+// // FINANCIAL JOURNAL SCHEMA
+// // Mongoose Schema for net worth
+// const networthSchema = new Schema({
+//   label: String,
+//   value: Number,
+//   valueBTC: Number,
+//   valueETH: Number,
+//   event: String
+// });
+// const Networth = new mongoose.model("Networth", networthSchema);
+//
+// // Mongoose Schema for Portfolio
+// const portfolioSchema = new Schema({
+//   fiatUSD: Number,
+//   cryptoUSD: Number,
+//   otherUSD: Number,
+//   longtermUSD: Number,
+//   commoditiesUSD: Number,
+//   fiatBTC: Number,
+//   cryptoBTC: Number,
+//   otherBTC: Number,
+//   longtermBTC: Number,
+//   commoditiesBTC: Number,
+//   fiatETH: Number,
+//   cryptoETH: Number,
+//   otherETH: Number,
+//   longtermETH: Number,
+//   commoditiesETH: Number
+// });
+// const Portfolio = new mongoose.model("Portfolio", portfolioSchema);
 
 // DARK/LIGHT MODE variable
 
@@ -190,68 +192,69 @@ app.post("/compose", function(req, res) {
   });
 });
 
-app.get("/compose-networth", function(req, res) {
-  if (req.isAuthenticated()) {
-    res.render("compose-networth", {
-      setting: modeSetting
-    });
-  } else {
-    res.redirect("/login");
-  }
-});
-
-app.post("/compose-networth", function(req, res) {
-  const networth = new Networth({
-    label: req.body.label,
-    value: req.body.value,
-    valueBTC: req.body.valueBTC,
-    valueETH: req.body.valueETH
-  });
-
-  networth.save(function(err, results) {
-    if (!err) {
-      res.redirect("/financial-journal");
-    }
-  });
-});
-
-app.get("/compose-portfolio", function(req, res) {
-  if (req.isAuthenticated()) {
-    res.render("compose-portfolio", {
-      setting: modeSetting
-    });
-  } else {
-    res.redirect("/login");
-  }
-});
-
-app.post("/compose-portfolio", function(req, res) {
-  Portfolio.updateOne(
-    { _id: "5cbc09e82daf8531fe366293" },
-    {
-      fiatUSD: req.body.fiatUSD,
-      cryptoUSD: req.body.cryptoUSD,
-      otherUSD: req.body.otherUSD,
-      longtermUSD: req.body.longtermUSD,
-      commoditiesUSD: req.body.commoditiesUSD,
-      fiatBTC: req.body.fiatBTC,
-      cryptoBTC: req.body.cryptoBTC,
-      otherBTC: req.body.otherBTC,
-      longtermBTC: req.body.longtermBTC,
-      commoditiesBTC: req.body.commoditiesBTC,
-      fiatETH: req.body.fiatETH,
-      cryptoETH: req.body.cryptoETH,
-      otherETH: req.body.otherETH,
-      longtermETH: req.body.longtermETH,
-      commoditiesETH: req.body.commoditiesETH
-    },
-    function(err, results) {
-      if (!err) {
-        res.redirect("/financial-journal");
-      }
-    }
-  );
-});
+//// COMPOSE FOR FINANCIAL JOURNAL
+// app.get("/compose-networth", function(req, res) {
+//   if (req.isAuthenticated()) {
+//     res.render("compose-networth", {
+//       setting: modeSetting
+//     });
+//   } else {
+//     res.redirect("/login");
+//   }
+// });
+//
+// app.post("/compose-networth", function(req, res) {
+//   const networth = new Networth({
+//     label: req.body.label,
+//     value: req.body.value,
+//     valueBTC: req.body.valueBTC,
+//     valueETH: req.body.valueETH
+//   });
+//
+//   networth.save(function(err, results) {
+//     if (!err) {
+//       res.redirect("/financial-journal");
+//     }
+//   });
+// });
+//
+// app.get("/compose-portfolio", function(req, res) {
+//   if (req.isAuthenticated()) {
+//     res.render("compose-portfolio", {
+//       setting: modeSetting
+//     });
+//   } else {
+//     res.redirect("/login");
+//   }
+// });
+//
+// app.post("/compose-portfolio", function(req, res) {
+//   Portfolio.updateOne(
+//     { _id: "5cbc09e82daf8531fe366293" },
+//     {
+//       fiatUSD: req.body.fiatUSD,
+//       cryptoUSD: req.body.cryptoUSD,
+//       otherUSD: req.body.otherUSD,
+//       longtermUSD: req.body.longtermUSD,
+//       commoditiesUSD: req.body.commoditiesUSD,
+//       fiatBTC: req.body.fiatBTC,
+//       cryptoBTC: req.body.cryptoBTC,
+//       otherBTC: req.body.otherBTC,
+//       longtermBTC: req.body.longtermBTC,
+//       commoditiesBTC: req.body.commoditiesBTC,
+//       fiatETH: req.body.fiatETH,
+//       cryptoETH: req.body.cryptoETH,
+//       otherETH: req.body.otherETH,
+//       longtermETH: req.body.longtermETH,
+//       commoditiesETH: req.body.commoditiesETH
+//     },
+//     function(err, results) {
+//       if (!err) {
+//         res.redirect("/financial-journal");
+//       }
+//     }
+//   );
+// });
 
 // JOURNAL
 
@@ -280,75 +283,93 @@ app.get("/posts/:postId", function(req, res) {
 });
 
 //FINANCIAL JOURNAL
-
 app.get("/financial-journal", function(req, res) {
   res.render("financial-journal", {
     setting: modeSetting
   });
 });
 
-app.get("/networth-usd", function(req, res) {
-  Networth.find({}).exec(function(err, x) {
-    if (err) {
-      console.log(err);
-    } else {
-      Portfolio.find({}).exec(function(err, y) {
-        if (err) {
-          console.log(err);
-        } else {
-          res.render("networth-usd", {
-            networth: x,
-            setting: modeSetting,
-            event: x,
-            portfolio: y
-          });
-        }
-      });
-    }
-  });
-});
-
 app.get("/networth-btc", function(req, res) {
-  Networth.find({}).exec(function(err, x) {
-    if (err) {
-      console.log(err);
-    } else {
-      Portfolio.find({}).exec(function(err, y) {
-        if (err) {
-          console.log(err);
-        } else {
-          res.render("networth-btc", {
-            networth: x,
-            setting: modeSetting,
-            event: x,
-            portfolio: y
-          });
-        }
-      });
-    }
+  res.render("networth-btc", {
+    setting: modeSetting
   });
 });
 
 app.get("/networth-eth", function(req, res) {
-  Networth.find({}).exec(function(err, x) {
-    if (err) {
-      console.log(err);
-    } else {
-      Portfolio.find({}).exec(function(err, y) {
-        if (err) {
-          console.log(err);
-        } else {
-          res.render("networth-eth", {
-            networth: x,
-            setting: modeSetting,
-            event: x,
-            portfolio: y
-          });
-        }
-      });
-    }
+  res.render("networth-eth", {
+    setting: modeSetting
   });
 });
+
+app.get("/networth-usd", function(req, res) {
+  res.render("networth-usd", {
+    setting: modeSetting
+  });
+});
+
+// ARCHIVED: FINANCIAL JOURNAL with DATABASE
+// app.get("/networth-usd", function(req, res) {
+//   Networth.find({}).exec(function(err, x) {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       Portfolio.find({}).exec(function(err, y) {
+//         if (err) {
+//           console.log(err);
+//         } else {
+//           res.render("networth-usd", {
+//             networth: x,
+//             setting: modeSetting,
+//             event: x,
+//             portfolio: y
+//           });
+//         }
+//       });
+//     }
+//   });
+// });
+//
+// app.get("/networth-btc", function(req, res) {
+//   Networth.find({}).exec(function(err, x) {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       Portfolio.find({}).exec(function(err, y) {
+//         if (err) {
+//           console.log(err);
+//         } else {
+//           res.render("networth-btc", {
+//             networth: x,
+//             setting: modeSetting,
+//             event: x,
+//             portfolio: y
+//           });
+//         }
+//       });
+//     }
+//   });
+// });
+//
+// app.get("/networth-eth", function(req, res) {
+//   Networth.find({}).exec(function(err, x) {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       Portfolio.find({}).exec(function(err, y) {
+//         if (err) {
+//           console.log(err);
+//         } else {
+//           res.render("networth-eth", {
+//             networth: x,
+//             setting: modeSetting,
+//             event: x,
+//             portfolio: y
+//           });
+//         }
+//       });
+//     }
+//   });
+// });
 
 // MUSIC
 
