@@ -147,7 +147,7 @@ input {
   width: 100vh;
 }
 
-/* Dark/Light mode for body */
+/* DARK & LIGHT MODE FOR BODY */
 body.dark {
   background-color: #111;
   color: #ddd;
