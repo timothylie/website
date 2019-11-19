@@ -371,6 +371,13 @@ app.get("/networth-usd", function(req, res) {
 //   });
 // });
 
+//INVESTMENT FUND
+app.get("/investment-fund", function(req, res) {
+  res.render("investment-fund", {
+    setting: modeSetting
+  });
+});
+
 // MUSIC
 
 app.get("/music", function(req, res) {
