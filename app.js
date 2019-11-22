@@ -283,11 +283,11 @@ app.get("/posts/:postId", function(req, res) {
 });
 
 //ADDRESS BOOK
-app.get("/address-book", function(req, res) {
-  res.render("address-book", {
-    setting: modeSetting
-  });
-});
+// app.get("/address-book", function(req, res) {
+//   res.render("address-book", {
+//     setting: modeSetting
+//   });
+// });
 
 //FINANCIAL JOURNAL
 app.get("/financial-journal", function(req, res) {
