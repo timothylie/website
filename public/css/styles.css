@@ -258,6 +258,10 @@ body.light .link-style:visited {
     width: 80%;
   }
 
+  .img-portrait {
+    width: 80%;
+  }
+
   .mobile-disable-view {
     display: none;
   }
