@@ -296,20 +296,20 @@ app.get("/financial-journal", function(req, res) {
   });
 });
 
-app.get("/networth-btc", function(req, res) {
-  res.render("networth-btc", {
+app.get("/fp-btc", function(req, res) {
+  res.render("fp-btc", {
     setting: modeSetting
   });
 });
 
-app.get("/networth-eth", function(req, res) {
-  res.render("networth-eth", {
+app.get("/fp-eth", function(req, res) {
+  res.render("fp-eth", {
     setting: modeSetting
   });
 });
 
-app.get("/networth-usd", function(req, res) {
-  res.render("networth-usd", {
+app.get("/fp-usd", function(req, res) {
+  res.render("fp-usd", {
     setting: modeSetting
   });
 });
@@ -381,6 +381,18 @@ app.get("/networth-usd", function(req, res) {
 //INVESTMENT FUND
 app.get("/investment-fund", function(req, res) {
   res.render("investment-fund", {
+    setting: modeSetting
+  });
+});
+
+app.get("/fp-investment-fund", function(req, res) {
+  res.render("fp-investment-fund", {
+    setting: modeSetting
+  });
+});
+
+app.get("/fp-food-beverages-index", function(req, res) {
+  res.render("fp-food-beverages-index", {
     setting: modeSetting
   });
 });
