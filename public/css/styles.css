@@ -180,7 +180,7 @@ body.dark .link-style:visited {
 }
 
 body.light {
-  background-color: #ddd;
+  background-color: #eee;
   color: #111;
 }
 body.light a,
@@ -188,7 +188,7 @@ body.light a:visited {
   color: #111;
 }
 body.light .navbar {
-  background-color: #ddd;
+  background-color: #eee;
 }
 
 body.light .moodButton {
@@ -197,7 +197,7 @@ body.light .moodButton {
 
 body.light .btn {
   background-color: #111;
-  color: #ddd;
+  color: #eee;
 }
 
 body.light .link-style,
