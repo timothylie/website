@@ -36,7 +36,7 @@ mongoose.connect(
   "mongodb+srv://" +
     process.env.MONGODB_LOGIN +
     "@cluster0-ysyuu.mongodb.net/timothylieDB",
-  { useNewUrlParser: true }
+  { useNewUrlParser: true, useUnifiedTopology: true }
 );
 mongoose.set("useCreateIndex", true);
 
