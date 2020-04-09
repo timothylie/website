@@ -282,7 +282,7 @@ app.get("/posts/:postId", function(req, res) {
   });
 });
 
-//ADDRESS BOOK
+//ADDRESS BOOK | Book of Address
 // app.get("/address-book", function(req, res) {
 //   res.render("address-book", {
 //     setting: modeSetting
@@ -417,6 +417,14 @@ app.get("/photos", function(req, res) {
 
 app.get("/artworks", function(req, res) {
   res.render("artworks", {
+    setting: modeSetting
+  });
+});
+
+// STORIES
+
+app.get("/stories", function(req, res) {
+  res.render("stories", {
     setting: modeSetting
   });
 });
