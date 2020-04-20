@@ -283,11 +283,19 @@ app.get("/posts/:postId", function(req, res) {
 });
 
 //ADDRESS BOOK | Book of Address
-// app.get("/address-book", function(req, res) {
-//   res.render("address-book", {
-//     setting: modeSetting
-//   });
-// });
+app.get("/address-book", function(req, res) {
+  res.render("address-book", {
+    setting: modeSetting
+  });
+});
+
+// FINANCE BOOK | Book of personal Financial Journal and Investment Fund
+
+app.get("/finance-book", function(req, res) {
+  res.render("finance-book", {
+    setting: modeSetting
+  });
+});
 
 //FINANCIAL JOURNAL
 app.get("/financial-journal", function(req, res) {
