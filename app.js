@@ -256,6 +256,13 @@ app.post("/compose", function(req, res) {
 //   );
 // });
 
+// MENU | List of all the items
+app.get("/menu", function(req, res) {
+  res.render("menu", {
+    setting: modeSetting
+  });
+});
+
 // JOURNAL
 
 app.get("/journal", function(req, res) {

@@ -14,7 +14,7 @@ body.light .linkTitle:hover {
 }
 
 .navbar {
-  padding-bottom: 1rem;
+  padding-bottom: 4rem;
 }
 
 /* TRADEMARK: This layout is created by Skriven. */
@@ -40,8 +40,12 @@ button {
   margin-top: 5%;
 }
 
+.menu {
+  margin-top: 15%;
+}
+
 .view {
-  padding-top: 16rem;
+  padding-top: 12rem;
   margin-bottom: 10%;
 }
 
@@ -84,6 +88,13 @@ input {
 .link-icon {
   width: 20px;
   margin-left: 5px;
+  text-decoration: none;
+}
+
+.link-icon-title {
+  width: 20px;
+  margin-left: 5px;
+  margin-right: 10px;
   text-decoration: none;
 }
 
@@ -215,6 +226,10 @@ body.light .link-style:visited {
     margin-top: 12%;
   }
 
+  .menu {
+    margin-top: 50%;
+  }
+
   .img-preview {
     width: 100%;
   }
@@ -228,7 +243,7 @@ body.light .link-style:visited {
   /* END OF LINK */
 
   .view {
-    padding-top: 16rem;
+    padding-top: 12rem;
     margin-bottom: 10%;
   }
 
