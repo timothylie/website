@@ -10,227 +10,237 @@
   <p class="link-style text">
     Sometimes, I sketch my emotions. <br /><br />By clicking on the artworks, you will be redirected to KnownOrigin where you'll be able to get a limited piece of my work on the Ethereum network.
   </p>
-  <br /><br />
+  <br/><br/>
 
   <!-- Artwork, when clicked, opens a list with links to source -->
-  <div class="text-center">
 
-    <!-- Safety first ARTWORK -->
-      <div class="text-center">
-        <a href="https://knownorigin.io/edition/148925" target="_blank">
-          <img src="/img/artworks/IMG_safety_first.jpg" alt="..." class="img-full">
-        </a>
-        <br />
-      </div>
-      <div class="text-center">
-        <h3> Safety first </h3>
-        <p class="text"> "Take care of your fellow human beings by showing empathy. Prevent the spread of COVID-19 by covering your mouth and nose with your bent elbow or tissue when you cough or sneeze, wash your hand with soap and water or use alcohol-based hand rub, maintain at least 1 meter distance between you and anyone who is coughing or sneezing, stay home when you feel unwell, and stock up only what you need. Think of your fellow humans." </p>
-        <p class="date"> Mon Mar 16 2020 </p>
-        <br /> <br />
-      </div><br />
-
-    <!-- It's not dark yet ARTWORK -->
-      <div class="text-center">
-        <a href="https://knownorigin.io/edition/143400" target="_blank">
-          <img src="/img/artworks/IMG_bob_dylan_not_dark_yet.jpg" alt="..." class="img-full">
-        </a>
-        <br />
-      </div>
-      <div class="text-center">
-        <h3> It's not dark yet </h3>
-        <p class="text"> "Sometimes my burden is more than I can bear. It's not dark yet, but it's gettin' there. - Bob Dylan" </p>
-        <p class="date"> Mon Mar 02 2020 </p>
-        <br /> <br />
-      </div><br />
-
-    <!-- Last Decade ARTWORK -->
-      <div class="text-center">
-        <a href="https://knownorigin.io/edition/140875" target="_blank">
-          <img src="/img/artworks/IMG_last_decade.jpg" alt="..." class="img-full">
-        </a>
-        <br />
-      </div>
-      <div class="text-center">
-        <h3> Last Decade </h3>
-        <p class="text"> "When I be forever gone, will I be in your memory?" </p>
-        <p class="date"> Tue Feb 25 2020 </p>
-        <br /> <br />
-      </div><br />
-
-    <!-- In Ether, I believe ARTWORK -->
-      <div class="text-center">
-        <a href="https://knownorigin.io/edition/115375" target="_blank">
-          <img src="/img/artworks/IMG_in_ether_we_believe.jpg" alt="..." class="img-full">
-        </a>
-        <br />
-      </div>
-      <div class="text-center">
-        <h3> In Ether, I believe </h3>
-        <p class="text"> "There is a great chance the economy of Suriname can be saved, if Suriname can find a way to adopt Ether as its native currency." </p>
-        <p class="date"> Mon Jan 13 2020 </p>
-        <br /> <br />
-      </div><br />
-
-    <!-- Magic Internet Money ARTWORK -->
-      <div class="text-center">
-        <a href="https://knownorigin.io/edition/109025" target="_blank">
-          <img src="/img/artworks/IMG_digital_unicorn.jpg" alt="..." class="img-full">
-        </a>
-        <br />
-      </div>
-      <div class="text-center">
-        <h3> Digital Unicorns </h3>
-        <p class="text"> "Ethereum is the unicorn of crypto. The magic internet money of the next decade and beyond." </p>
-        <p class="date"> Tue Dec 31 2019 </p>
-        <br /> <br />
-      </div><br />
-
-    <!-- STEVE JOBS ARTWORK -->
-      <div class="text-center">
-        <a href="https://knownorigin.io/edition/105950" target="_blank">
-          <img src="/img/artworks/IMG_steve_jobs.jpg" alt="..." class="img-full">
-        </a>
-        <br />
-      </div>
-      <div class="text-center">
-        <h3> Steve Jobs </h3>
-        <p class="text"> "One way to remember who you are is to remember who your heroes are. Here’s to the crazy ones." </p>
-        <p class="date"> Mon Dec 23 2019 </p>
-        <br /> <br />
-      </div><br />
-
-    <!-- SATOSHI ARTWORK -->
-    <% if(setting === "dark") { %>
-      <a href="https://knownorigin.io/edition/104750" target="_blank">
-        <img src="/img/artworks/IMG_satoshi-gif-dark.gif" alt="animated" class="img-full">
+  <!-- Safety first ARTWORK -->
+    <div class="text-center">
+      <a href="https://knownorigin.io/edition/148925" target="_blank">
+        <img src="/img/artworks/IMG_safety_first.jpg" alt="..." class="img-full">
       </a>
-    <% } else { %>
-      <a href="https://knownorigin.io/edition/105150" target="_blank">
-        <img src="/img/artworks/IMG_satoshi-gif-light.gif" alt="animated" class="img-full">
+      <br/>
+    </div>
+    <div class="text-center">
+      <h3> Safety first </h3>
+      <p class="text">
+        "Take care of your fellow human beings by showing empathy.
+        <span id="dots_section_a1"></span>
+        <span class="readMore" id="more_section_a1">
+          Prevent the spread of COVID-19 by covering your mouth and nose with your bent elbow or tissue when you cough or sneeze, wash your hand with soap and water or use alcohol-based hand rub, maintain at least 1 meter distance between you and anyone who is coughing or sneezing, stay home when you feel unwell, and stock up only what you need. Think of your fellow humans."
+        </span>
+      </p>
+      <button onclick="readMore('section_a1')" value="<%=setting%>" id="readBtn_section_a1" class="readButton date" style="background-color: transparent;">
+        read more
+      </button>
+      <p class="date"> Mon Mar 16 2020 </p>
+      <br/><br/>
+    </div>
+
+  <!-- It's not dark yet ARTWORK -->
+    <div class="text-center">
+      <a href="https://knownorigin.io/edition/143400" target="_blank">
+        <img src="/img/artworks/IMG_bob_dylan_not_dark_yet.jpg" alt="..." class="img-full">
       </a>
-    <% } %>
-    <br />
-  </div>
-  <div class="text-center">
-    <h3> Satoshi </h3>
-    <p class="text"> "An icon that started a silent revolution against the banks in the Digital age." </p>
-    <p class="date"> Fri Dec 20 2019 </p>
-    <br /> <br />
-  </div><br />
+      <br/>
+    </div>
+    <div class="text-center">
+      <h3> It's not dark yet </h3>
+      <p class="text"> "Sometimes my burden is more than I can bear. It's not dark yet, but it's gettin' there. - Bob Dylan" </p>
+      <p class="date"> Mon Mar 02 2020 </p>
+      <br/><br/>
+    </div>
 
-<!-- DISCONNECT ARTWORK -->
-  <div class="text-center">
-    <a href="https://knownorigin.io/edition/103550" target="_blank">
-      <img src="/img/artworks/IMG_disconnect.jpg" alt="..." class="img-full">
-    </a>
-    <br />
-  </div>
-  <div class="text-center">
-    <h3> Disconnect </h3>
-    <p class="text"> "Never get too attached to anything." </p>
-    <p class="date"> Mon Dec 16 2019 </p>
-    <br /> <br />
-  </div><br />
+  <!-- Last Decade ARTWORK -->
+    <div class="text-center">
+      <a href="https://knownorigin.io/edition/140875" target="_blank">
+        <img src="/img/artworks/IMG_last_decade.jpg" alt="..." class="img-full">
+      </a>
+      <br/>
+    </div>
+    <div class="text-center">
+      <h3> Last Decade </h3>
+      <p class="text"> "When I be forever gone, will I be in your memory?" </p>
+      <p class="date"> Tue Feb 25 2020 </p>
+      <br/><br/>
+    </div>
 
-<!-- ETHER ARTWORK -->
-  <div class="text-center">
-    <a href="https://knownorigin.io/edition/98300" target="_blank">
-      <img src="/img/artworks/IMG_ether-gif.gif" alt="animated" class="img-full">
-    </a>
-    <br />
-  </div>
-  <div class="text-center">
-    <h3> Ether </h3>
-    <p class="text"> "The native cryptocurrency of the Ethereum network, a foundation for a new era of the internet." </p>
-    <p class="date"> Wed Dec 11 2019 </p>
-    <br /> <br />
-  </div><br />
+  <!-- In Ether, I believe ARTWORK -->
+    <div class="text-center">
+      <a href="https://knownorigin.io/edition/115375" target="_blank">
+        <img src="/img/artworks/IMG_in_ether_we_believe.jpg" alt="..." class="img-full">
+      </a>
+      <br/>
+    </div>
+    <div class="text-center">
+      <h3> In Ether, I believe </h3>
+      <p class="text"> "There is a great chance the economy of Suriname can be saved, if Suriname can find a way to adopt Ether as its native currency." </p>
+      <p class="date"> Mon Jan 13 2020 </p>
+      <br/><br/>
+    </div>
 
-<!-- MISUNDERSTOOD ARTWORK -->
-  <div class="text-center">
-    <a href="https://knownorigin.io/edition/91400" target="_blank">
-      <img src="/img/artworks/IMG_misunderstood-dark.jpg" alt="..." class="img-full">
-    </a>
-    <br />
-  </div>
-  <div class="text-center">
-    <h3> Misunderstood </h3>
-    <p class="text"> "Sometimes, I wish I was ..." </p>
-    <p class="date"> Tue Nov 19 2019 </p>
-    <br /> <br />
-  </div><br />
+  <!-- Magic Internet Money ARTWORK -->
+    <div class="text-center">
+      <a href="https://knownorigin.io/edition/109025" target="_blank">
+        <img src="/img/artworks/IMG_digital_unicorn.jpg" alt="..." class="img-full">
+      </a>
+      <br/>
+    </div>
+    <div class="text-center">
+      <h3> Digital Unicorns </h3>
+      <p class="text"> "Ethereum is the unicorn of crypto. The magic internet money of the next decade and beyond." </p>
+      <p class="date"> Tue Dec 31 2019 </p>
+      <br/><br/>
+    </div>
 
-<!-- ON MY MIND ARTWORK -->
-  <div class="text-center">
-    <a href="https://knownorigin.io/edition/88250" target="_blank">
-      <img src="/img/artworks/IMG_on_my_mind-dark.jpg" alt="..." class="img-full">
-    </a>
-    <br />
-  </div>
-  <div class="text-center">
-    <h3> On my mind </h3>
-    <p class="text"> "Thoughts flow through my mind in a disorderly fashion, yet perfectly in order when zoomed out." </p>
-    <p class="date"> Fri Nov 08 2019 </p>
-    <br /> <br />
-  </div><br />
+  <!-- Steve Jobs ARTWORK -->
+    <div class="text-center">
+      <a href="https://knownorigin.io/edition/105950" target="_blank">
+        <img src="/img/artworks/IMG_steve_jobs.jpg" alt="..." class="img-full">
+      </a>
+      <br/>
+    </div>
+    <div class="text-center">
+      <h3> Steve Jobs </h3>
+      <p class="text"> "One way to remember who you are is to remember who your heroes are. Here’s to the crazy ones." </p>
+      <p class="date"> Mon Dec 23 2019 </p>
+      <br/><br/>
+    </div>
 
-<!-- LONE ROAD ARTWORK -->
-  <div class="text-center">
-    <a href="https://knownorigin.io/edition/87550" target="_blank">
-      <img src="/img/artworks/IMG_lone_road-dark.jpg" alt="..." class="img-full">
-    </a>
-    <br />
-  </div>
-  <div class="text-center">
-    <h3> Lone road </h3>
-    <p class="text"> "Near a road in the midst of nowhere, we grew." </p>
-    <p class="date"> Tue Nov 05 2019 </p>
-    <br /> <br />
-  </div><br />
+  <!-- Satoshi ARTWORK -->
+    <div class="text-center">
+      <% if(setting === "dark") { %>
+        <a href="https://knownorigin.io/edition/104750" target="_blank">
+          <img src="/img/artworks/IMG_satoshi-gif-dark.gif" alt="animated" class="img-full">
+        </a>
+      <% } else { %>
+        <a href="https://knownorigin.io/edition/105150" target="_blank">
+          <img src="/img/artworks/IMG_satoshi-gif-light.gif" alt="animated" class="img-full">
+        </a>
+      <% } %>
+      <br/>
+    </div>
+    <div class="text-center">
+      <h3> Satoshi </h3>
+      <p class="text"> "An icon that started a silent revolution against the banks in the Digital age." </p>
+      <p class="date"> Fri Dec 20 2019 </p>
+      <br/><br/>
+    </div>
 
-<!-- A TIMELESS DRIFT ARTWORK -->
-  <div class="text-center">
-    <a href="https://knownorigin.io/edition/86875" target="_blank">
-      <img src="/img/artworks/IMG_a_timeless_drift-dark.jpg" alt="..." class="img-full">
-    </a>
-    <br />
-  </div>
-  <div class="text-center">
-    <h3> A timeless drift </h3>
-    <p class="text"> "Timelessly drifting through life to find a sense of meaning." </p>
-    <p class="date"> Sun Nov 03 2019 </p>
-    <br /> <br />
-  </div><br />
+  <!-- Disconnect ARTWORK -->
+    <div class="text-center">
+      <a href="https://knownorigin.io/edition/103550" target="_blank">
+        <img src="/img/artworks/IMG_disconnect.jpg" alt="..." class="img-full">
+      </a>
+      <br/>
+    </div>
+    <div class="text-center">
+      <h3> Disconnect </h3>
+      <p class="text"> "Never get too attached to anything." </p>
+      <p class="date"> Mon Dec 16 2019 </p>
+      <br/><br/>
+    </div>
 
-<!-- TELL ME A STORY ARTWORK -->
-  <div class="text-center">
-    <a href="https://knownorigin.io/edition/85625" target="_blank">
-      <img src="/img/artworks/IMG_tell_me_a_story-gif.gif" alt="animated" class="img-full">
-    </a>
-    <br />
-  </div>
-  <div class="text-center">
-    <h3> Tell me a story </h3>
-    <p class="text"> "From ancient times, fantasies to a traveler's adventure, wonderful stories are to be told." </p>
-    <p class="date"> Wed Oct 30 2019 </p>
-    <br /> <br />
-  </div><br />
+  <!-- Ether ARTWORK -->
+    <div class="text-center">
+      <a href="https://knownorigin.io/edition/98300" target="_blank">
+        <img src="/img/artworks/IMG_ether-gif.gif" alt="animated" class="img-full">
+      </a>
+      <br/>
+    </div>
+    <div class="text-center">
+      <h3> Ether </h3>
+      <p class="text"> "The native cryptocurrency of the Ethereum network, a foundation for a new era of the internet." </p>
+      <p class="date"> Wed Dec 11 2019 </p>
+      <br/><br/>
+    </div>
 
-<!-- DARKNESS ARTWORK -->
-  <div class="text-center">
-    <a href="https://knownorigin.io/edition/85275" target="_blank">
-      <img src="/img/artworks/IMG_JIV_art-dark.jpg" alt="..." class="img-full">
-    </a>
-    <br />
-  </div>
-  <div class="text-center">
-    <h3> Darkness </h3>
-    <p class="text"> "The spectrum of my life is either in a very dark space, or a calm one. I yet have to master in between." </p>
-    <p class="date"> Mon Oct 21 2019 </p>
-    <br /> <br />
-  </div><br />
+  <!-- Misunderstood ARTWORK -->
+    <div class="text-center">
+      <a href="https://knownorigin.io/edition/91400" target="_blank">
+        <img src="/img/artworks/IMG_misunderstood-dark.jpg" alt="..." class="img-full">
+      </a>
+      <br/>
+    </div>
+    <div class="text-center">
+      <h3> Misunderstood </h3>
+      <p class="text"> "Sometimes, I wish I was ..." </p>
+      <p class="date"> Tue Nov 19 2019 </p>
+      <br/><br/>
+    </div>
 
-  <a class="link-style"> Fin </a>
+  <!-- On My Mind ARTWORK -->
+    <div class="text-center">
+      <a href="https://knownorigin.io/edition/88250" target="_blank">
+        <img src="/img/artworks/IMG_on_my_mind-dark.jpg" alt="..." class="img-full">
+      </a>
+      <br/>
+    </div>
+    <div class="text-center">
+      <h3> On my mind </h3>
+      <p class="text"> "Thoughts flow through my mind in a disorderly fashion, yet perfectly in order when zoomed out." </p>
+      <p class="date"> Fri Nov 08 2019 </p>
+      <br/><br/>
+    </div>
+
+  <!-- Lone Road ARTWORK -->
+    <div class="text-center">
+      <a href="https://knownorigin.io/edition/87550" target="_blank">
+        <img src="/img/artworks/IMG_lone_road-dark.jpg" alt="..." class="img-full">
+      </a>
+      <br/>
+    </div>
+    <div class="text-center">
+      <h3> Lone road </h3>
+      <p class="text"> "Near a road in the midst of nowhere, we grew." </p>
+      <p class="date"> Tue Nov 05 2019 </p>
+      <br/><br/>
+    </div>
+
+  <!-- A Timeless Drift ARTWORK -->
+    <div class="text-center">
+      <a href="https://knownorigin.io/edition/86875" target="_blank">
+        <img src="/img/artworks/IMG_a_timeless_drift-dark.jpg" alt="..." class="img-full">
+      </a>
+      <br/>
+    </div>
+    <div class="text-center">
+      <h3> A timeless drift </h3>
+      <p class="text"> "Timelessly drifting through life to find a sense of meaning." </p>
+      <p class="date"> Sun Nov 03 2019 </p>
+      <br/><br/>
+    </div>
+
+  <!-- Tell Me A Story ARTWORK -->
+    <div class="text-center">
+      <a href="https://knownorigin.io/edition/85625" target="_blank">
+        <img src="/img/artworks/IMG_tell_me_a_story-gif.gif" alt="animated" class="img-full">
+      </a>
+      <br/>
+    </div>
+    <div class="text-center">
+      <h3> Tell me a story </h3>
+      <p class="text"> "From ancient times, fantasies to a traveler's adventure, wonderful stories are to be told." </p>
+      <p class="date"> Wed Oct 30 2019 </p>
+      <br/><br/>
+    </div>
+
+  <!-- Darkness ARTWORK -->
+    <div class="text-center">
+      <a href="https://knownorigin.io/edition/85275" target="_blank">
+        <img src="/img/artworks/IMG_JIV_art-dark.jpg" alt="..." class="img-full">
+      </a>
+      <br/>
+    </div>
+    <div class="text-center">
+      <h3> Darkness </h3>
+      <p class="text"> "The spectrum of my life is either in a very dark space, or a calm one. I yet have to master in between." </p>
+      <p class="date"> Mon Oct 21 2019 </p>
+      <br/><br/>
+    </div>
+
+  <p class="link-style"> Fin </p>
 </div>
 
+<%- include("partials/readmore-script"); -%>
 <%- include("partials/footer"); -%>

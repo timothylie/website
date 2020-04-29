@@ -36,6 +36,10 @@ button {
   background-image: none;
 }
 
+.readMore {
+  display: none;
+}
+
 .home {
   margin-top: 5%;
 }
@@ -126,6 +130,11 @@ input {
   margin-top: 1rem;
   width: 10rem;
   height: 2rem;
+  border-radius: 0rem;
+  border: 0px;
+}
+
+.readButton {
   border-radius: 0rem;
   border: 0px;
 }
