@@ -436,10 +436,10 @@ app.get("/artworks", function(req, res) {
   });
 });
 
-// STORIES
+// MILESTONES
 
-app.get("/stories", function(req, res) {
-  res.render("stories", {
+app.get("/milestones", function(req, res) {
+  res.render("milestones", {
     setting: modeSetting
   });
 });
