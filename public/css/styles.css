@@ -45,7 +45,7 @@ button {
 }
 
 .menu {
-  margin-top: 15%;
+  padding-top: 15rem;
 }
 
 .view {
@@ -236,20 +236,17 @@ body.light .link-style:visited {
   }
 
   .menu {
-    margin-top: 50%;
+    padding-top: 15rem;
   }
 
   .img-preview {
     width: 100%;
   }
 
-  /* LINK */
   .link-icon {
     width: 27px;
     margin-left: 5px;
   }
-
-  /* END OF LINK */
 
   .view {
     padding-top: 12rem;
