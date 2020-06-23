@@ -393,15 +393,15 @@ app.get("/fp-usd", function(req, res) {
 //   });
 // });
 
-//INVESTMENT FUND
-app.get("/investment-fund", function(req, res) {
-  res.render("investment-fund", {
+//FUND
+app.get("/fund", function(req, res) {
+  res.render("fund", {
     setting: modeSetting
   });
 });
 
-app.get("/fp-investment-fund", function(req, res) {
-  res.render("fp-investment-fund", {
+app.get("/fp-fund", function(req, res) {
+  res.render("fp-fund", {
     setting: modeSetting
   });
 });
