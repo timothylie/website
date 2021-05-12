@@ -21,7 +21,7 @@
   "homepage": "https://github.com/timl206/website#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "chart.js": "^2.8.0",
+    "chart.js": "^2.9.4",
     "dotenv": "^6.2.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
