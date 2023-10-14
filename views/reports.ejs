@@ -1,0 +1,45 @@
+<%- include("partials/header"); -%>
+
+<div class="container-fluid">
+  <%- include("partials/navigation"); -%>
+</div>
+
+<div class="container-fluid view">
+  <img src="/img/icons/reports-original.png" alt="..." class="content-icon">
+  <h3 class="title-style"> Photos </h3>
+  <p class="link-style text">
+    A report of my journey through the world.
+    <br/><br/> By clicking on the photos, you will be redirected to ZeroOne where you'll be able to own a limited piece of my work on the Ethereum network.
+    <!-- <br/><br/> The digital version represents as a certificate for the physical one. -->
+  </p>
+  <br/><br/>
+
+  <!-- Photo, when clicked, opens a list with links to source -->
+
+  <!-- Swift peek -->
+    <div class="text-center">
+      <a href="https://zeroone.art/artwork/swift-peek-7742" target="_blank">
+        <img src="/img/photos/IMG_swift_peek.jpg" alt="..." class="img-full">
+      </a>
+      <br/>
+    </div>
+    <div class="text-center">
+      <h3 class="text"> Swift peek </h3>
+      <p class="text">
+        "A swift peek to see who's passing by their habitat just close to sunset.
+        <span id="dots_section_p13"></span>
+        <span class="readMore" id="more_section_p13">
+        A friend of mine took this pic, very interesting I must say."
+      </p>
+      <button onclick="readMore('section_p13')" value="<%=setting%>" id="readBtn_section_p13" class="readButton date" style="background-color: transparent;">
+        read more
+      </button>
+      <p class="date"> Sat Oct 14 2023 </p>
+      <br/><br/>
+    </div>
+
+  <p class="link-style"> Fin </p>
+</div>
+
+<%- include("partials/readmore-script"); -%>
+<%- include("partials/footer"); -%>
