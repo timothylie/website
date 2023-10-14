@@ -220,6 +220,14 @@ app.get("/fp-food-beverages-index", function(req, res) {
   });
 });
 
+// REPORTS
+
+app.get("/reports", function(req, res) {
+  res.render("reports", {
+    setting: modeSetting
+  });
+});
+
 // MUSIC
 
 app.get("/music", function(req, res) {
